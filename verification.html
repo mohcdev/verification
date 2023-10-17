@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<title>Verification</title>
+
+		<style>		
+			textarea{
+			    height: 500px;
+			    width: 500px;
+			}
+		</style>
+	</head>
+	<body>
+		 
+	<h2>Virification</h2>
+
+
+	<textarea id="src"></textarea>
+	<button>Submit</button>
+	<textarea id="result"></textarea>
+
+	<script>
+		
+	const btn = document.querySelector('button')
+	const srcTextbox = document.querySelector('#src')
+	const resultTextbox = document.querySelector('#result')
+
+
+	btn.onclick = ()=>{
+		//console.log(srcTextbox.value.split('\n'))
+
+		let data = srcTextbox.value.split('\n')
+		data.forEach(row =>{
+			if(row.length>20){
+	// 			 console.log(row)
+
+		//	 console.log(row.substring(11, row.indexOf('"',12)), row.substring(17,row.indexOf('"',20)))
+			 let line = row.substring(11, row.indexOf('"',12)) +"\t"+ row.substring(17,row.indexOf('"',20))+"\n"
+			
+			resultTextbox.value += line
+
+			}
+			 
+		})
+	}
+	 
+	</script>
+	</body>
+</html>
