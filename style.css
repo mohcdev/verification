@@ -16,6 +16,10 @@ h2{
     justify-content: space-around;
     
 }
+
+.textareas>div{
+	position: relative;
+}
 textarea{
     height: 500px;
     width: 500px;
@@ -45,5 +49,21 @@ button{
 
     
 button:hover{
-	background: #2f8bf4;
+	background: #74b0f5;
+}
+
+span{
+	position: absolute;
+    bottom: -15px;
+    left: 15px;
+    font-size: 12px;
+    color: #fff;
+    padding: 0 5px;
+}
+
+#src + span{
+    background: #af4343;
+}
+#result + span{
+    background: #33c138;
 }
