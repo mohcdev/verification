@@ -1,28 +1,34 @@
 const btn = document.querySelector('button')
-	const srcTextbox = document.querySelector('#src')
-	const resultTextbox = document.querySelector('#result')
-
+const srcTextbox = document.querySelector('#src')
+const resultTextbox = document.querySelector('#result')
+const spanSrcCount = document.querySelector('#src + span')
+const spanResultCount = document.querySelector('#result + span')
 
 resultTextbox.onfocus = (e)=> console.log(e.target.select())
+
+//empty textboxes first
+
 btn.onclick = ()=>{
-		//console.log(srcTextbox.value.split('\n'))
+		 
+	resultTextbox.value = ''
 
 	let data = srcTextbox.value.split('\n')
 	data.forEach(row =>{
-	if(row.length>20){
-	// 			 console.log(row)
+		if(row.length>40){ 
 
-		//	 console.log(row.substring(11, row.indexOf('"',12)), row.substring(17,row.indexOf('"',20)))
-		 let profileNbr = row.substring(11, row.indexOf('"',12))
-		 let emailAddress = row.substring(row.indexOf('","')+3,row.indexOf('"',20))
+			let profileNbr = row.substring(11, row.indexOf('"',12))
+			let emailAddress = row.substring(row.indexOf('","')+3,row.indexOf('"',20))
 
-		 let line =`${profileNbr} \t ${emailAddress} \n`  
+			let line =`${profileNbr} \t ${emailAddress} \n`  
 
-			
-		resultTextbox.value += line
 
-			}
+			resultTextbox.value += line
+
+		}
 			 
-		})
+	})
+	console.log(data.length)
+	spanSrcCount.textContent = data.length
+	spanResultCount.textContent = resultTextbox.value.split('\n').length
 	}
 	 
