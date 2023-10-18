@@ -3,6 +3,7 @@ const srcTextbox = document.querySelector('#src')
 const resultTextbox = document.querySelector('#result')
 const spanSrcCount = document.querySelector('#src + span')
 const spanResultCount = document.querySelector('#result + span')
+const refreshDiv = document.querySelector('#refresh')
 
 resultTextbox.onfocus = (e)=> console.log(e.target.select())
 
@@ -32,3 +33,7 @@ btn.onclick = ()=>{
 	spanResultCount.textContent = resultTextbox.value.split('\n').length
 	}
 	 
+
+	refreshDiv.onclick = ()=>{
+			window.location.reload()
+	}

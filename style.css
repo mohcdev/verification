@@ -14,7 +14,7 @@ h2{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    
+    position: relative;
 }
 
 .textareas>div{
@@ -31,13 +31,13 @@ textarea{
     padding: 5px;
 }
 textarea:hover{
-    box-shadow: 0 0 5px #bbb;
+    box-shadow: 0 0 8px #aaa;
 
 }
 button{
     margin: auto;
     display: flex;
-    padding: 10px 3rem;
+    padding: 15px 3rem;
     border: none;
     color: #fff;
     background: #0077ff;
@@ -66,4 +66,13 @@ span{
 }
 #result + span{
     background: #33c138;
+}
+
+#refresh{
+	background: #f8ffff;
+    color: #ddd;
+    width: 50%;
+    height: 50%;
+    position: absolute; 
+    cursor: pointer;
 }
